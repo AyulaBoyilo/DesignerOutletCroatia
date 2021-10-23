@@ -1,0 +1,812 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+@import "./_utilities";
+
+@import "../node_modules/bulma/bulma";
+
+//GENERAL
+.body,
+html {
+  max-width: 100vw;
+  margin: 0;
+  font-family: $family-primary;
+  background-color: #eeeeee;
+}
+
+.main-content {
+  margin: 0 auto;
+
+  @include for-desktop {
+    width: 960px;
+  }
+  @include for-big-desktop {
+    width: 1200px;
+  }
+}
+
+.inner-wrapper {
+  padding: 0;
+
+  @include for-big-desktop {
+    padding: 0 56px;
+  }
+}
+
+h1 {
+  font-family: $family-secondary;
+  color: black;
+  line-height: 1;
+
+  @include for-phone {
+    font-size: 100px;
+    line-height: normal;
+  }
+  @include for-small-phone {
+    font-size: 27vw;
+    line-height: normal;
+  }
+  @include for-tablet-portrait {
+    font-size: 100px;
+  }
+  @include for-tablet-landscape {
+    font-size: 100px;
+  }
+  @include for-desktop {
+    font-size: 120px;
+  }
+  @include for-big-desktop {
+    font-size: 120px;
+  }
+}
+
+.container-video {
+  @include for-phone {
+    max-width: 100vw;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  @include for-tablet-portrait {
+    max-width: 100vw;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  @include for-tablet-landscape {
+    max-width: 100vw;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  @include for-desktop {
+    width: 100vw;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+  @include for-big-desktop {
+    width: 1200px;
+    margin: 40px auto;
+  }
+}
+
+h3 {
+  font-family: $family-secondary;
+  color: black;
+
+  @include for-phone {
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+  }
+  @include for-small-phone {
+    font-size: 35px;
+    line-height: 56px;
+    text-align: center;
+  }
+  @include for-tablet-portrait {
+    font-size: 40px;
+    line-height: 56px;
+  }
+  @include for-tablet-landscape {
+    font-size: 40px;
+    line-height: 56px;
+  }
+  @include for-desktop {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  @include for-big-desktop {
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+.titles-wrapper {
+  @include for-phone {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  @include for-tablet-portrait {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  @include for-desktop {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.uvodni-tekst {
+  padding-left: 94px;
+  padding-right: 94px;
+
+  @include for-phone {
+    padding-left: 37px;
+    padding-right: 37px;
+  }
+  @include for-tablet-portrait {
+    padding-left: 77px;
+    padding-right: 77px;
+  }
+  @include for-desktop {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.stripe {
+  color: #eeeeee;
+  background: repeating-linear-gradient(
+    331deg,
+    #aaa8ad,
+    #aaa8ad 2px,
+    #eeeeee 2px,
+    #eeeeee 4px
+  );
+
+  @include for-phone {
+    line-height: 3px;
+    margin: 10% auto;
+    max-width: 100vw;
+  }
+  @include for-tablet-portrait {
+    line-height: 7px;
+    margin: 5% auto;
+    max-width: 100vw;
+  }
+  @include for-tablet-landscape {
+    line-height: 7px;
+    margin: 5% auto;
+    max-width: 100vw;
+  }
+  @include for-desktop {
+    line-height: 10px;
+    margin: 5% auto;
+    max-width: 90vw;
+  }
+  @include for-big-desktop {
+    line-height: 10px;
+    margin: 5% auto;
+    max-width: 90vw;
+  }
+}
+
+a {
+  color: black;
+}
+a:hover,
+a:active {
+  color: #ff06dd;
+}
+
+p {
+  font-family: $family-primary;
+  color: black;
+  text-align: center;
+
+  @include for-phone {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  @include for-tablet-portrait {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  @include for-tablet-landscape {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  @include for-desktop {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  @include for-big-desktop {
+    font-size: 30px;
+    line-height: 45px;
+  }
+}
+
+span {
+  font-weight: bold;
+}
+
+.osoba__ime {
+  font-family: $family-secondary;
+  color: black;
+  margin: 5px auto 60px;
+  padding-right: 7vw;
+
+
+  @include for-phone {
+    font-size: 70px;
+    line-height: 70px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 40px;
+  }
+  @include for-tablet-portrait {
+    font-size: 70px;
+    line-height: 70px;
+    text-align: right;
+    padding-right: 0;
+    margin-right: 11vw;
+    margin-bottom: 40px;
+  }
+  @include for-tablet-landscape {
+    font-size: 70px;
+    line-height: 70px;
+    text-align: right;
+  }
+  @include for-desktop {
+    font-size: 70px;
+    line-height: 70px;
+    text-align: right;
+
+  }
+  @include for-big-desktop {
+    font-size: 70px;
+    line-height: 1;
+    text-align: right;
+    margin-right: 200px;
+  }
+}
+
+.container-wrapper2 {
+  max-width: 1200px;
+}
+
+.osoba__nadnaslov {
+  
+  &__rendeli {
+    @include for-tablet-portrait {
+      line-height: 42px;
+      margin-left: 11vw;
+      padding-right: 0;
+      text-align: center;
+      width: 54vw;
+    }
+    @include for-big-desktop {
+      text-align: right;
+      margin-left: 0;
+      padding-right: 14vw;
+      width: 100%;
+    }
+    @include for-desktop {
+      text-align: right;
+      margin-left: 0;
+      padding-right: 14vw;
+      width: 100%;
+    }
+
+
+    @include for-phone {
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+      text-align: center;
+      width: 80vw;
+    }
+  }
+  &__elenajel {
+    
+    @include for-tablet-portrait {
+      line-height: 42px;
+      margin-left: 11vw;
+      padding-right: 0;
+      text-align: center;
+      width: 64vw;
+    }
+    @include for-desktop {
+      margin-left: 0;
+      padding-right: 15vw;
+      padding-left: 0;
+      text-align: right;
+      width: 100%;
+    }
+    @include for-big-desktop {
+      margin-left: 0;
+      padding-right: 200px;
+      text-align: right;
+      width: 100%;
+    }
+    @include for-phone {
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+      text-align: center;
+      width: 80vw;
+    }
+  }
+  &__patrik {
+    padding-right: 17vw;
+    text-align: right;
+    
+    @include for-tablet-portrait {
+      line-height: 42px;
+      margin-left: 11vw;
+      padding-right: 0;
+      text-align: center;
+      width: 64vw;
+    }
+    @include for-desktop {
+      padding-right: 326px;
+      padding-left: 200px;
+      margin-left: 0;
+      text-align: right;
+      width: 100%;
+    }
+
+    @include for-phone {
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+      text-align: center;
+      width: 80vw;
+    }
+  }
+}
+
+.photo-wrapper {
+  max-width: 80vw;
+  margin: 5% auto;
+  @include for-phone {
+    display: flex;
+    flex-direction: column;
+  }
+  @include for-tablet-portrait {
+    display: flex;
+    flex-direction: column;
+  }
+  @include for-tablet-landscape {
+    display: flex;
+    flex-direction: column;
+  }
+  @include for-desktop {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  @include for-big-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+h4 {
+  font-family: $family-secondary;
+  color: black;
+
+  @include for-phone {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 15% auto;
+  }
+  @include for-tablet-portrait {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+  @include for-tablet-landscape {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+  @include for-desktop {
+    font-size: 70px;
+    line-height: 70px;
+    text-align: right;
+  }
+  @include for-big-desktop {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+// Osobe - titles & photos
+
+.linkovi__wrapper {
+  display: flex;
+  justify-content: space-between;
+ 
+  @include for-phone {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @include for-tablet-portrait {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include for-tablet-landscape {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include for-desktop {
+    display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  @include for-big-desktop {
+    display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    }
+}
+
+.linkovi__wrapper__content {
+  display: flex;
+  width: 346px;
+  flex-direction: column;
+  height: 316px;
+  padding: 10px;
+
+  @include for-phone {
+    width: 100vw;
+    height: 91vw;
+  }
+
+  @include for-tablet-portrait {
+    margin-left: auto;
+    margin-right: auto;
+    width: 78vw;
+    height: 70vw;
+    padding: 0 0 15px;
+  }
+  @include for-desktop {
+    width: 306px;
+    height: 275px;
+    padding: 0;
+  }
+  @include for-big-desktop {
+    width: 346px;
+    height: 316px;
+  }
+  
+  p {
+    font-family: $family-secondary;
+    text-align: center;
+
+    @include for-phone {
+      font-size: 30px;
+    }
+  }
+  
+  span {
+    text-align: right;
+
+    @include for-phone {
+      font-size: 12px;
+    }
+  }
+
+  &:hover {
+    p {
+      color: #ff06dd;
+    }
+  }
+}
+
+.linkovi__wrapper_one {
+  justify-content: flex-end;
+  margin-top: 0;
+
+  @include for-desktop {
+    margin-top: 40px;
+  }
+
+  &__rendeli {
+    background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                url('../_assets/images/Nevena_Rendeli_promjena_posla.png') no-repeat top center / contain;
+
+    @include for-tablet-portrait {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-posla_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-posla_768px.jpg') no-repeat top center / contain;
+    }
+  }
+  &__elenajel {
+    justify-content: flex-start;
+              
+    @include for-tablet-portrait {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-vaznost-zenskog-prijateljstva_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-vaznost-zenskog-prijateljstva_768px.jpg') no-repeat top center / contain;
+    }
+    @include for-desktop {
+      justify-content: flex-start !important;
+      background: url('../_assets/images/dijagonale.svg') no-repeat top right / 90%,
+                url('../_assets/images/Elena_Jelena_vaznost_zenskog_prijateljstva.png') no-repeat bottom center / contain;
+    }
+  }
+  &__patrik {
+    background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                url('../_assets/images/Patrik_Cvetko_uvijek_u_trendu.png') no-repeat top center / contain;
+              
+    @include for-tablet-portrait {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-uvijek-u-trendu_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-uvijek-u-trendu_768px.jpg') no-repeat top center / contain;
+    }
+  }
+}
+
+.linkovi__wrapper_two {
+  justify-content: flex-start;
+
+  &__rendeli {
+    
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-navika_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-navika_768px.jpg') no-repeat top center / contain;
+    }
+    @include for-desktop {
+      justify-content: flex-start !important;
+      background: url('../_assets/images/dijagonale.svg') no-repeat top right / 90%,
+                url('../_assets/images/Nevena_Rendeli_promjena_navika.png') no-repeat bottom center / contain;
+    }
+  }
+  &__elenajel {
+    justify-content: flex-end;
+    background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+    url('../_assets/images/Elena_Jelena_lezeran_pristup.png') no-repeat top center / contain;
+    
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-lezeran-pristup_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-lezeran-pristup_768px.jpg') no-repeat top center / contain;
+    }
+  }
+  &__patrik {
+    background: url('../_assets/images/dijagonale.svg') no-repeat top right / 90%,
+                url('../_assets/images/Patrik_Cvetko_klasici_s_pomakom.png') no-repeat bottom center / contain;
+    
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-klasici-s-pomakom_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-klasici-s-pomakom_768px.jpg') no-repeat top center / contain;
+    }
+    @include for-desktop {
+      justify-content: flex-start !important;
+      background: url('../_assets/images/dijagonale.svg') no-repeat top right / 90%,
+                url('../_assets/images/Patrik_Cvetko_klasici_s_pomakom.png') no-repeat bottom center / contain;
+    }
+  }
+}
+
+.linkovi__wrapper_three {
+  justify-content: flex-end;
+
+  &__rendeli {
+    background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                url('../_assets/images/Nevena_Rendeli_promjena_stila.png') no-repeat top center / contain;
+
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-stila_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Nevena-Rendeli-promjena-stila_768px.jpg') no-repeat top center / contain;
+    }
+  }
+  &__elenajel {
+    justify-content: flex-start;
+    
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-zabava-novog-doba_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Elena-Jelena-zabava-novog-doba_768px.jpg') no-repeat top center / contain;
+    }
+
+    @include for-desktop {
+      justify-content: flex-start !important;
+      background: url('../_assets/images/dijagonale.svg') no-repeat top right / 90%,
+                url('../_assets/images/Elena_Jelena_zabava_novog_doba.png') no-repeat bottom center / contain;
+    }
+  }
+  &__patrik {
+        
+    @include for-tablet-portrait {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-novi-biznis-kod_1024px.jpg') no-repeat top center / contain;
+    }
+    @include for-phone {
+      margin-top: 40px;
+      background: url('../_assets/images/dijagonale.svg') no-repeat bottom right / 90%,
+                  url('../_assets/images/Patrik-Cvetko-novi-biznis-kod_768px.jpg') no-repeat top center / contain;
+    }
+  }
+}
+
+.linkovi__wrapper_one, .linkovi__wrapper_two, .linkovi__wrapper_three {
+  @include for-tablet-portrait {
+    justify-content: flex-end;
+  }
+  @include for-phone {
+    justify-content: flex-end;
+  }
+}
+
+//FOOTER
+.footer {
+  background-color: #eeeeee;
+  padding: 50px 0 13.23vw !important;
+
+  @include for-phone {
+    padding: 0 0 50px !important;
+  }
+}
+
+h6 {
+  font-family: $family-primary;
+  color: black;
+  text-align: center;
+
+  @include for-phone {
+    font-size: 17px;
+    line-height: 26px;
+    margin-top: 10px;
+    margin-left: 28px;
+    margin-right: 28px;
+  }
+  @include for-tablet-portrait {
+    font-size: 18px;
+    line-height: 42px;
+  }
+  @include for-tablet-landscape {
+    font-size: 18px;
+    line-height: 42px;
+  }
+  @include for-desktop {
+    font-size: 18px;
+    line-height: 42px;
+  }
+  @include for-big-desktop {
+    font-size: 18px;
+    line-height: 42px;
+  }
+}
+
+.container-footer {
+  display: flex;
+
+  h6,
+  a {
+    margin: 20px;
+
+    @include for-phone {
+      margin: 10px;
+    }
+  }
+
+  @include for-tablet-portrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    align-items: flex-end;
+  }
+
+  @include for-tablet-landscape {
+    font-size: 20px;
+  }
+
+  @include for-phone {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    align-items: flex-end;
+  }
+
+  @include for-big-desktop {
+    align-items: flex-end;
+  }
+}
+
+.logo__amz {
+  width: 8vw;
+
+  @include for-tablet-portrait {
+    width: 154px;
+  }
+  @include for-phone {
+    width: 154px;
+  }
+}

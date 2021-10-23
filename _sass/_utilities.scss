@@ -1,0 +1,32 @@
+
+//** MEDIA QUERIES **
+
+@mixin for-small-phone {
+  @media (max-width: 359px) { @content; }
+}
+@mixin for-phone {
+  @media (max-width: 768px) { @content; }
+}
+@mixin for-tablet-portrait {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop {
+  @media (min-width: 1025px) { @content; }
+}
+@mixin for-big-desktop {
+  @media (min-width: 1366px) { @content; }
+}
+
+//** VARIABLES **
+
+$fullhd: 1200px + (2 * $gap);
+$section-padding-desktop: 3rem 0;
+
+//font-family
+$family-primary: 'Open Sans', sans-serif;
+$family-secondary: 'Poiret One', cursive;
+
+
